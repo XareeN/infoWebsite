@@ -1,33 +1,180 @@
+html {
+  overflow: hidden;
+  scroll-behavior: smooth !important;
+}
+body {
+  margin: 0;
+  font-size: 26px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #ffffff;
+  height: 100vh;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
 .App {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* width: 100%;
+  height: 100vh; */
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.box1{
+  background-color: coral;
+}
+.box2{
+  background-color:crimson
+}
+.box3{
+  background-color: olivedrab;
+}
+.parallax-wrapper:nth-child(2) {
+  width: 100%;
+  height: 100vh;
+  /* padding-top: 20vh; */
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+}
+.parallax-wrapper {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  justify-content: center;
+}
+.parallax-wrapper::before:nth-child(2) {
+  content:"";
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  background-image: url("./resources/pics/desk.jpg");
+  position: absolute;
+  z-index: -1;
+  transform:translateZ(-1px) scale(2);
+}
+.parallax-wrapper::before {
+  content:"";
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  background-image: url("./resources/pics/desk.jpg");
+  position: absolute;
+  z-index: -1;
+  transform:translateZ(-1px) scale(2);
+}
+.regular-wrapper {
+  width: 100vw;
+  height:100vh;
+  /* background-image: url("./resources/pics/code.jpg"); */
+  background: rgba(43, 43, 46, 1);
+  z-index: 2;
+  position: relative;
+}
+.middle::before, .end::before {
+  content: "";
+  width: 100vw;
+  height:10vh;
+  display: block !important;
+  top: -47.5% !important;
+  clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0% 100%);
+  /* clip-path: polygon(0 calc(100% - 2vh), 100% calc(100% - 5vh), 100% 100%, 0% 100%); */
+  background: rgba(43, 43, 46, 1);
+  z-index: 3;
+  position: relative;
+}
+.middle::after {
+  content: "";
+  width: 100vw;
+  height:10vh;
+  display: block !important;
+  bottom: -48% !important;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+  background: rgba(43, 43, 46, 1);
+  z-index: 3;
+  position: relative;
+}
+/* .content {
+  margin: 0 auto;
+  padding: 50px;
+  width: 50%;
+  background: #aaa;
+} */
+
+.custom-navbar {
+  position: fixed !important;
+  top: 0;
+  transition: top 0.8s;
+  z-index: 5;
+}
+ul li a {
+  font-size: 1.5rem;
+  font-weight: normal !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.cl-effect-15 a {
+	color: rgba(0,0,0,0.2);
+	font-weight: 700;
+	text-shadow: none;
 }
 
-.App-link {
-  color: #61dafb;
+.cl-effect-15 a::before {
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cl-effect-15 a:hover::before,
+.cl-effect-15 a:focus::before {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0;
+}
+.footer{
+  position: relative;
+  bottom: 0;
+  background: rgb(32, 32, 34);
+  z-index: 5;
+}
+.info-text{
+  animation: animate-text-in 0.8s ease-out forwards ;
+}
+@keyframes animate-text-in{
+  0%{
+      opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+      opacity: 0;
+      filter: blur(10px);
+      transform: scale(0.8);
+  }
+  100%{
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
   }
 }
