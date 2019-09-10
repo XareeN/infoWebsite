@@ -1,0 +1,182 @@
+html {
+    overflow: hidden;
+    scroll-behavior: smooth !important;
+}
+body {
+    margin: 0;
+    font-size: 26px;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    color: #ffffff;
+    height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.parallax-wrapper {
+    width: 100vw;
+    height:100vh;
+    /* padding-top:20vh; */
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+}
+/* .parallax-wrapper::before {
+    content:"";
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-image: url("../pics/desk.jpg");
+    position: absolute;
+    z-index: -1;
+    transform:translateZ(-1px) scale(2);
+} */
+.regular-wrapper {
+    width: 100vw;
+    /* height:100vh; */
+    /* padding-top:20vh; */
+    background: rgba(43, 43, 46, 1);
+    z-index: 2;
+    position: relative;
+}
+.content {
+    margin: 0 auto;
+    padding: 50px;
+    width: 50%;
+    background: #aaa;
+}
+
+
+.custom-navbar {
+    position: fixed !important;
+    top: 0;
+    transition: top 0.8s;
+    z-index: 5;
+}
+ul li a {
+    font-size: 1.5rem;
+    font-weight: normal !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.footer{
+    background: rgb(32, 32, 34);
+    height: 6vh;
+    width: 100%;
+}
+.footer p {
+    margin: 0;
+    font-weight: lighter !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+.jumbotron{
+    background-color: rgba(170, 170, 170, 1);
+    border-radius: 5px;
+    padding: 20px !important;
+    margin-bottom: 10px;
+}
+.parallax-wrapper .jumbotron p {
+    color: rgb(32, 32, 34);
+}
+.middle-parallax-wrapper{
+    height: 50vh !important;
+}
+h2 code {
+    background-image: linear-gradient(transparent 75%, #ff7043 75%);
+    /* background-image: linear-gradient(transparent 75%, linear-gradient(right blue , #ff7043 ) 75%); */
+    /* background-image: linear-gradient(right #dafc2b , #39d3ed ); */
+}
+.regular-wrapper::before {
+    content: "";
+    width: 100vw;
+    height:10vh;
+    display: block !important;
+    top: -9.5% !important;
+    clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0% 100%);
+    background: rgba(43, 43, 46, 1);
+    z-index: 3;
+    position: relative;
+}
+.middle-regular-wrapper::after {
+    content: "";
+    width: 100vw;
+    height:10vh;
+    display: block !important;
+    bottom: -40% !important;
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+    background: rgba(43, 43, 46, 1);
+    z-index: 3;
+    position: relative;
+}
+.btn-margin {
+    margin: 0 10px 10px 0;
+}
+.pw-bg1::before {
+    background: url("../pics/work.jpg") !important;
+}
+.pw-bg2::before {
+    background: url("../pics/code.jpg") !important;
+}
+
+.hover-effect a {
+	padding: 10px;
+	color: #fff;
+	font-weight: 700;
+	text-shadow: none;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.hover-effect a::before,
+.hover-effect a::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #ff7043;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.hover-effect a::before {
+	top: 0;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.hover-effect a::after {
+	bottom: 0;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.hover-effect a:hover,
+.hover-effect a:focus {
+	color: #ff7043;
+}
+
+.hover-effect a:hover::before,
+.hover-effect a:focus::before,
+.hover-effect a:hover::after,
+.hover-effect a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}

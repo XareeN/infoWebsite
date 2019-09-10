@@ -1,0 +1,109 @@
+html {
+    /* overflow: hidden; */
+    scroll-behavior: smooth !important;
+    overflow-x: hidden;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 1);
+}
+body{
+    font-size: 1.5rem;
+}
+#sample-colors {
+    color: #dafc2b , #39d3ed, #013646, #035358, #028ca7, #74c9f2;}
+
+/* parallax section */
+.landing-parallax{
+    height: 96vh;
+}
+
+/* content section */
+.custom-navbar {
+    position: fixed !important;
+    top: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 20%, transparent);
+    z-index: 5;
+}
+.section-title {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-image: linear-gradient(transparent 75%, #035358 75%);
+    /* background-image: linear-gradient(transparent 75%, linear-gradient(right blue , #ff7043 ) 75%); */
+    /* background-image: linear-gradient(45deg, #39d3ed , #dafc2b ); */
+}
+.content-wrapper {
+    background: rgba(43, 43, 46, 1);
+    padding-bottom: 20px;
+}
+.content-wrapper-bg-color{
+    background: rgba(43, 43, 46, 1);
+}
+.content-wrapper-shape {
+    margin-top: -5vh;
+    margin-bottom: -5vh;
+    clip-path: polygon(
+        0 calc(0% + 5vh), 
+        100% 0%, 
+        100% calc(100% - 5vh), 
+        0% 100%
+    );
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.jumbotron{
+    background-color: rgba(170, 170, 170, 1);
+    border-radius: 5px;
+    padding: 20px !important;
+    margin-bottom: 10px;
+}
+.jumbotron-custom-bg{
+    background-image: linear-gradient(to right, rgba(170, 170, 170, 1) 40%, transparent ), url("../pics/work.jpg");
+    background-color: transparent !important;
+}
+.btn-margin {
+    margin: 0 10px 10px 0;
+}
+.btn-background {
+    background-image: linear-gradient(to right, #035358 40%, transparent ), url("../pics/work.jpg");
+}
+.icon-margin {
+    margin-right: 10px;
+}
+
+
+/* tag styling section */
+ul li a {
+    font-size: 1.3rem;
+    font-weight: normal !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p::selection, h1::selection, h2::selection, h3::selection, br::selection {
+    color: #dafc2b;
+}
+
+/* pseudo elements */
+/* .content-wrapper::before {
+    content: "";
+    height: 4vh;
+    display: block !important;
+    clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0% 100%);
+    background: rgb(116, 113, 113);
+    z-index: 3;
+    position: relative;
+} */
+
+.footer{
+    background: rgb(32, 32, 34);
+    height: 6vh;
+    width: 100%;
+}
+.footer p {
+    margin: 0;
+    font-weight: lighter !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
