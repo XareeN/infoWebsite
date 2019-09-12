@@ -1,0 +1,23 @@
+@media screen and (max-width: 992px){
+    .jumbotron-custom-bg{
+        background-image: linear-gradient(to top, rgba(170, 170, 170, 1) 40%, transparent ), url("../pics/work.jpg");
+    }
+    .jumbotron-custom-bg-trans{
+        padding: 20px !important;
+    }
+}
+@keyframes animate-text{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}

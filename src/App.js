@@ -1,7 +1,7 @@
 import React, {Component, lazy, Suspense} from 'react';
 // import './App.css';
 import './resources/css/style.css';
-import './resources/css/style_mediaqueries.css';
+import './resources/css/style_advanced.css';
 import './resources/css/font-awesome.min.css';
 
 const LandingPage = lazy(() => import('./LandingPage'));
@@ -20,6 +20,7 @@ export default class App extends Component {
     this.setState({
       isLoading: false
     })
+
   }
 
   render(){
