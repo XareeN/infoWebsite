@@ -5,7 +5,40 @@
     .jumbotron-custom-bg-trans{
         padding: 20px !important;
     }
+    .parallax-container{
+        height: 400px;
+    }
+    .react-parallax-content{
+        top: 30%;
+    }
 }
+@media screen and (max-width: 600px){
+    /* .jumbotron-custom-bg{
+        background-image: linear-gradient(to top, rgba(170, 170, 170, 1) 40%, transparent ), url("../pics/work.jpg");
+    }
+    .jumbotron-custom-bg-trans{
+        padding: 20px !important;
+    } */
+    .parallax-container{
+        height: 250px;
+    }
+    .react-parallax-content{
+        top: 20%;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 2.8rem;
+    }
+    h3{
+        font-size: 2.3rem;
+    }
+    p{
+        font-size: 1.3rem;
+    }
+}
+
 @keyframes animate-text{
     0%{
         opacity: 0;

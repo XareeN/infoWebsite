@@ -13,7 +13,7 @@ body{
 
 /* parallax section */
 .landing-parallax{
-    height: 96vh;
+    height: 96vh !important;
     z-index: 0 !important;
 }
 .parallax-container{
@@ -40,7 +40,8 @@ body{
     /* background-image: linear-gradient(45deg, #39d3ed , #a8eb12 ); */
 }
 .content-wrapper {
-    background: rgba(43, 43, 46, 1);
+    /* background: rgba(43, 43, 46, 1); */
+    background-image: linear-gradient(to right bottom, rgb(30, 30, 32), rgb(53, 53, 56), rgb(33, 33, 36) );
     padding-bottom: 20px;
 }
 .content-wrapper-bg-color{
@@ -58,6 +59,17 @@ body{
     padding-top: 5vh;
     padding-bottom: 5vh;
 }
+.contacts-section-shape {
+    margin-top: -5vh;
+    clip-path: polygon(
+        0 0, 
+        100% calc(0% + 5vh), 
+        100% 100%, 
+        0% 100%
+    );
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
 .flex{
     display: flex;
     flex-direction: column;
@@ -67,7 +79,7 @@ body{
     padding-right: 15px;
 }
 .jumbotron{
-    background-color: rgba(170, 170, 170, 1);
+    background-color: rgba(170, 170, 170, 0.9);
     border-radius: 5px;
     padding: 20px !important;
     margin-bottom: 10px;
@@ -78,7 +90,8 @@ body{
     background-color: transparent !important;
 }
 .jumbotron-custom-bg-trans{
-    background: rgba(0, 0, 0, 0.3);
+    /* background: rgba(0, 0, 0, 0.3); */
+    background: rgba(30, 30, 32, 1);
     padding: 10px 40px 10px 40px !important;
 }
 .jumbotron-custom-box-shadow{
@@ -119,6 +132,14 @@ body{
 }
 .no-padding{
     padding: 0 !important;
+}
+.c-mobile-nav{
+    /* background-color: #035358; */
+    background-image: linear-gradient(to right bottom, #013646, #035358 )
+}
+.modal-footer{
+    /* background-color: transparent !important; */
+    display: none;
 }
 
 

@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component, lazy, Suspense} from 'react';
 import { Parallax, Background } from 'react-parallax';
+import { Modal, Button } from 'react-materialize';
+// import VideoComp from './VideoComponent';
 
+const Video = lazy(() => import('./VideoComponent'));
 
 export default class LandingPage extends Component {
     render() {
@@ -9,7 +12,7 @@ export default class LandingPage extends Component {
                 
         <nav id="navbar" className="z-depth-0 transparent custom-navbar hoverable">
             <div className="nav-wrapper">
-            <a href="#" data-target="mobile-sidenav" className="sidenav-trigger"><i className="fa fa-bars" aria-hidden="true"></i></a>
+            <a href="#" data-target="mobile-nav" className="sidenav-trigger modal-trigger"><i className="fa fa-bars" aria-hidden="true"></i></a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><a href="#about">About me</a></li>
                 <li><a href="#work">Portfolio</a></li>
@@ -18,13 +21,17 @@ export default class LandingPage extends Component {
             </div>
         </nav>
 
-        <ul className="sidenav" id="mobile-sidenav">
-            <li><a href="#about">About me</a></li>
-            <li><a href="#work">Portfolio</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-        </ul>
+        <Modal id="mobile-nav" className="c-mobile-nav" header="Menu">
+            <div className="flex">
+                <a href="#home" className="btn z-depth-3 trans-btn btn-margin modal-close">Home</a>
+                <a href="#about" className="btn z-depth-3 trans-btn btn-margin modal-close">About me</a>
+                <a href="#work" className="btn z-depth-3 trans-btn btn-margin modal-close">Portfolio</a>
+                <a href="#contacts" className="btn z-depth-3 trans-btn btn-margin modal-close">Contacts</a>
+            </div>
+        </Modal>
 
-          <div className="parallax-container landing-parallax flex">
+
+          <div id="home" className="parallax-container landing-parallax flex">
             {/* <Parallax strength={300}>
               <div>Use the background component for custom elements</div>
               <Background className="custom-bg">
@@ -32,7 +39,12 @@ export default class LandingPage extends Component {
               </Background>
             </Parallax> */}
             <div className="parallax">
-              <video src="/vids/Space-5200.mp4" autoPlay loop/>
+            <Suspense fallback={
+              <div>Loading...</div>
+            }>
+              <Video/>
+              {/* <video src="/vids/Space-5200.mp4" autoPlay loop/> */}
+            </Suspense>
             </div>
             <div className="flex">
               <h1 className="animated-text-1s">Looking for a <br/>web developer?</h1>
@@ -81,7 +93,7 @@ export default class LandingPage extends Component {
               <Parallax
                   blur={{ min: -15, max: 15 }}
                   bgImage={require('./resources/pics/desk.jpg')}
-                  bgImageAlt="the dog"
+                  bgImageAlt="The desk"
                   strength={200}
                   style={{ height: '500px' }}
                   contentClassName="react-parallax-content custom-one"
@@ -127,22 +139,6 @@ export default class LandingPage extends Component {
 
 
 
-
-
-    
-          {/* <div className="parallax-container flex">
-            <div className="parallax">
-              <img src="/pics/work.jpg"/>
-            </div>
-            <div className="row">
-              <div className="col s8 offset-s2">
-                <div className="jumbotron">
-                    <p>Check out some of my projects below!</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-    
           <div id="work" className="content-wrapper content-wrapper-shape">
             <div className="row">
               <div className="col s10 offset-s1 m8 offset-m2">
@@ -154,6 +150,7 @@ export default class LandingPage extends Component {
                   <div className="col s12 m8">
                     <h3>Planner app for beauty salon </h3>
                     <p>This application was created to help beauty salon get rid of paper planners.</p>
+                    <p>Written with:<br/>Java (Spring Boot), React.js, MongoDB</p>
                     <a className="waves-effect waves-light btn btn-margin btn-background" href="https://github.com/XareeN/UrodaManagementApplication">
                       <i className="fa fa-code icon-margin" aria-hidden="true"></i>
                       View source code
@@ -196,6 +193,7 @@ export default class LandingPage extends Component {
                   <div className="col s12 m8">
                     <h3>Stopwatch </h3>
                     <p>A basic stopwatch with common functions</p>
+                    <p>Written with:<br/>React Native</p>
                     <a className="waves-effect waves-light btn btn-margin btn-background" href="https://github.com/XareeN/stopwatch">
                       <i className="fa fa-code icon-margin" aria-hidden="true"></i>
                       View source code
@@ -215,6 +213,7 @@ export default class LandingPage extends Component {
                   <div className="col s12 m8">
                     <h3>This portfolio site :) </h3>
                     <p>I know, I know. Just.. let it happen.</p>
+                    <p>Written with:<br/>React.js</p>
                     <a className="waves-effect waves-light btn btn-margin btn-background" href="https://github.com/XareeN/infoWebsite">
                       <i className="fa fa-code icon-margin" aria-hidden="true"></i>
                       View source code
@@ -232,7 +231,7 @@ export default class LandingPage extends Component {
             <Parallax
                 blur={{ min: -15, max: 15 }}
                 bgImage={require('./resources/pics/work.jpg')}
-                bgImageAlt="the dog"
+                bgImageAlt="Working on a laptop"
                 strength={200}
                 style={{ height: '500px' }}
                 contentClassName="react-parallax-content custom-one"
@@ -244,24 +243,10 @@ export default class LandingPage extends Component {
                     </div>
                   </div>
                 </div>
-                {/* <div style={{ height: '200px' }} /> */}
             </Parallax>
           </div>
 
-          {/* <div className="parallax-container flex">
-            <div className="parallax">
-              <img src="/pics/work.jpg"/>
-            </div>
-            <div className="row">
-              <div className="col s8 offset-s2">
-                <div className="jumbotron">
-                  <p>If I got your attention, let me know by contacting me!</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-    
-          <div id="contacts" className="content-wrapper" distortion="2vh">
+          <div id="contacts" className="content-wrapper contacts-section-shape" distortion="2vh">
             <div className="row">
               <div className="col s10 offset-s1 m8 offset-m2">
                 <h2 className="section-title">Contacts</h2>
