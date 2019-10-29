@@ -1,9 +1,9 @@
-(function($){
-    $(function(){
+// (function($){
+//     $(function(){
 
-        $('.parallax').parallax();
-        $('.sidenav').sidenav();
+//         $('.parallax').parallax();
+//         $('.sidenav').sidenav();
 
-    });
-})(jQuery);
+//     });
+// })(jQuery);
   

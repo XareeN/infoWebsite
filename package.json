@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.0",
+    "aos": "^2.3.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-gsap": "^1.2.0",
     "react-materialize": "^3.4.1",
     "react-parallax": "^2.2.1",
     "react-scripts": "3.1.1",
+    "react-scrollmagic": "^2.1.1",
     "rellax": "^1.10.0"
   },
   "scripts": {
